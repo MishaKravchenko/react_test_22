@@ -1,0 +1,21 @@
+*{
+ box-sizing: border-box;
+}
+.container_upper{
+ display: flex;
+ border: crimson 10px solid;
+}
+.container_down{
+ border: black 10px solid;
+}
+
+.container_users{
+ background-color: coral;
+ width: 20%;
+}
+
+.container_posts{
+ width: 80%;
+ background-color: dodgerblue;
+
+}

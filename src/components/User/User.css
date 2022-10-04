@@ -1,0 +1,11 @@
+*{
+    text-align: center;
+}
+.userBox h2{
+    border: gold 2px solid;
+}
+
+.userBox p{
+    font-weight: bold;
+    font-style: italic;
+}

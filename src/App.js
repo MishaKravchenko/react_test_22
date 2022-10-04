@@ -239,8 +239,14 @@ function App() {
         <div>
 
             {
-                users.map(item => <Simpson key={item.id} name={item.name} surname={item.surname} email={item.email} street={item.address.street} lat={item.address.geo.lat}/>)
-                    }
+                users.map(item => <Simpson
+                    key={item.id}
+                    name={item.name}
+                    surname={item.surname}
+                    email={item.email}
+                    street={item.address.street}
+                    lat={item.address.geo.lat}/>)
+            }
 
         </div>
     );

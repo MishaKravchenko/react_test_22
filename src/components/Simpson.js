@@ -1,13 +1,13 @@
 import React from 'react';
 
 const Simpson = (props) => {
-let {name, surname, url} = props;
+    let {name, surname, email, street, lat} = props;
     return (
-        <div className="App">
-            <h1 className="hello">{surname}</h1>
+        <div>
             <div>
-                <p>{name} {surname} </p>
-                <img src={url} alt={name}/>
+                <h2>{name} {surname} </h2>
+                <p>{email}</p>
+                <p>{street} {lat}</p>
             </div>
         </div>
     );

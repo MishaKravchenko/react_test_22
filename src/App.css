@@ -12,10 +12,15 @@
 .container_users{
  background-color: coral;
  width: 20%;
+ display: flex;
 }
 
 .container_posts{
  width: 80%;
  background-color: dodgerblue;
+}
 
+.container_comments{
+ display: flex;
+background-color: #00b5bd;
 }

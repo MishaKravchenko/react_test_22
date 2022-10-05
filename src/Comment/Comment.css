@@ -1,0 +1,15 @@
+.comments{
+    border: black 1px solid;
+    display: flex;
+    flex-flow: row wrap;
+
+}
+.comment{
+    border: black 1px solid;
+    background-color: #00cb25;
+    width: 25%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}

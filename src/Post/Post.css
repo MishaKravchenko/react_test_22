@@ -1,8 +1,6 @@
 .posts{
-    border: black 1px solid;
     display: flex;
     flex-flow: row wrap;
-
 }
 .post{
     width: 20%;

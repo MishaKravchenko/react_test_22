@@ -12,7 +12,7 @@ function App() {
 
             </div>
             <div className={"container_down"}>
-                <Comments/>
+                <div className={"container_comments"}><Comments/></div>
             </div>
 
         </div>

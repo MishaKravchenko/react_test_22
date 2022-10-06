@@ -1,31 +1,28 @@
 import React, {useEffect, useState} from 'react';
+
 import User from "./User";
+import {userService} from "../services/user.service";
+
 
 const Users = () => {
 
     const [users, setUsers] = useState([]);
-    const [user, setUser] = useState([]);
+    const [user, setUser] = useState(null);
 
-    const getUserId = (id) =>{
-        console.log(id)
+    const getUserById = (id) => {
+        userService.getUserById(id)
+            .then(value => setUser(value))
     }
 
-    useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(value => value.json())
+    useEffect(() => {
+        userService.getAll()
             .then(value => setUsers(value))
-    },[])
-
-    useEffect((id)=>{
-        fetch('https://jsonplaceholder.typicode.com/users'+id)
-                                .then(value => value.json())
-                                .then(value => setUser(value))
-    },[])
+    }, [])
 
     return (
         <div>
-            {user && <div>{user.id} -- {user.name} -- {user.email}</div>}
-            {users.map(value => <User key={value.id} user={value} getUserId={getUserId}/>)}
+            {user && <div>{user.id} -- {user.name} -- {user.username} -- {user.email}</div>}
+            <div>{users.map(value => <User key={value.id} user={value} getUserById={getUserById}/>)}</div>
         </div>
     );
 };

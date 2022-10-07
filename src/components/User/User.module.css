@@ -1,0 +1,9 @@
+.wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrap button{
+    height: 40px;
+}

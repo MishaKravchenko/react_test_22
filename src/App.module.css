@@ -1,0 +1,8 @@
+.wrap{
+    display: flex;
+    align-items: center;
+}
+
+.item2{
+    margin-left: 100px;
+}

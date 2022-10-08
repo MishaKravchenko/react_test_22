@@ -6,13 +6,13 @@ const Form = ({getFilter}) => {
 
     const submit = (e) => {
         e.preventDefault()
-        console.log(form)
+        getFilter(form);
     }
 
     const formHandler = (e) => {
         const eventData = ({...form, [e.target.name]: e.target.value});
         setForm({...form, ...eventData})
-        getFilter(eventData);
+        // getFilter(eventData);
     }
     return (
         <div>

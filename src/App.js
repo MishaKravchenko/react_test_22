@@ -3,20 +3,19 @@ import Users from "./components/Users/Users";
 import UserDetails from "./components/UserDetails/UserDetails";
 import Posts from "./components/Posts/Posts";
 import css from './App.module.css'
-import {postsService} from "./services/posts.service";
 
 const App = () => {
 
     const [user, setUser] = useState(null);
-    const [posts, setPosts] = useState([]);
+    const [userId, setUserId] = useState(null);
 
     const getUser = (user) => {
         setUser(user)
-        setPosts([])
+        setUserId(null)
     }
 
     const getUserId = (id) => {
-        postsService.getById(id).then(value => setPosts([...value]))
+        setUserId(id)
     }
 
     return (
@@ -26,7 +25,7 @@ const App = () => {
                 <div className={css.item2}>{user && <UserDetails user={user} getUserId={getUserId}/>}</div>
             </div>
             <div className={css.item3}>
-                <Posts posts={posts}/>
+                <Posts userId={userId}/>
             </div>
 
         </div>

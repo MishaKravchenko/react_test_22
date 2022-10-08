@@ -1,0 +1,8 @@
+.wrap {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    background-color: #fff5a8;
+    border: black 1px solid;
+    width: 800px;
+}

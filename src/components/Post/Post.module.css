@@ -1,0 +1,16 @@
+.wrap {
+    display: flex;
+    flex-flow: column;
+
+}
+button {
+    height: 40px;
+}
+.post_container{
+    display: flex;
+    align-items: center;
+    border: black 1px solid;
+    width: 600px;
+    padding: 10px;
+    background-color: gold;
+}

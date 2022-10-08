@@ -2,6 +2,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: darkorange;
+    padding: 10px;
+    border: 1px black solid;
+    width: 600px;
 }
 
 .wrap button{

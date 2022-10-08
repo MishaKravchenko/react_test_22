@@ -1,0 +1,15 @@
+.wrap button {
+    height: 40px;
+}
+
+.wrap {
+    box-sizing: border-box;
+    background-color: #f34100;
+    padding: 40px;
+    width: 800px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    border: black 1px solid;
+
+}

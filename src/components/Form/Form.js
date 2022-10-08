@@ -12,7 +12,9 @@ const Form = ({getFilter}) => {
     const formHandler = (e) => {
         const eventData = ({...form, [e.target.name]: e.target.value});
         setForm({...form, ...eventData})
+        getFilter(eventData);
         // getFilter(eventData);
+
     }
     return (
         <div>

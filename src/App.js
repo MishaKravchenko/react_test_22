@@ -1,25 +1,29 @@
-import './App.css';
-import {useEffect, useState} from "react";
-import User from "./components/User";
+import React, {useState} from 'react';
 
-function App() {
-    let [usersList, setUsersList] = useState([]);
+const App = () => {
 
+    const [form, setForm] = useState({name: '', age: 0});
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(value => value.json())
-            .then(users => {
-                setUsersList(users)
-            })
-    }, [])
+    const submit = (e) => {
+        e.preventDefault();
+        console.log(form);
+    }
+
+    const formHandle = (e) => {
+        setForm({...form, [e.target.name]: e.target.value})
+    }
 
     return (
         <div>
-            {usersList.map(user => <User key={user.id} id={user.id} name={user.name} username={user.username}/>
-            )}
+            <form onSubmit={submit}>
+                <div>
+                    <label>Name: <input type="text" name={"name"} onChange={formHandle}/></label>
+                    <label>Age: <input type="number" name={"age"} onChange={formHandle}/></label>
+                    <button>Submit</button>
+                </div>
+            </form>
         </div>
     );
-}
+};
 
 export default App;

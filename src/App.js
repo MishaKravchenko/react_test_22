@@ -15,6 +15,17 @@ const App = () => {
 
     return (
         <div>
+
+            {
+                users.map(item => <Simpson
+                    key={item.id}
+                    name={item.name}
+                    surname={item.surname}
+                    email={item.email}
+                    street={item.address.street}
+                    lat={item.address.geo.lat}/>)
+            }
+
             <form onSubmit={submit}>
                 <div>
                     <label>Name: <input type="text" name={"name"} onChange={formHandle}/></label>

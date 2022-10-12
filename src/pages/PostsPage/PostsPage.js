@@ -37,4 +37,4 @@ const PostsPage = () => {
     );
 };
 
-export default PostsPage;
+export {PostsPage};

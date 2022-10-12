@@ -40,4 +40,4 @@ const SinglePostPage = () => {
     );
 };
 
-export default SinglePostPage;
+export {SinglePostPage};

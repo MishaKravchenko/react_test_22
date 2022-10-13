@@ -8,18 +8,23 @@ import {albumService} from "../../services/album.service";
 const UserAlbumsPage = () => {
 
     const [albums, setAlbums] = useState([]);
+    // const {state} = useLocation();
     const {id} = useParams();
 
-    useEffect(()=>{
+    useEffect(() => {
         albumService.getAlbumsById(id).then(value => setAlbums([...value]))
-    },[id]);
+    }, [id]);
 
 
     return (
         <div className={css.userAlbums_container}>
-            <h2>Albums</h2>
-            {albums && albums.map(value => <UserAlbums key={value.id} albums={value}/>)}
-            <Outlet/>
+            <div>
+                <h2>Albums</h2>
+                {albums && albums.map(value => <UserAlbums key={value.id} albums={value}/>)}
+            </div>
+            <div>
+                <Outlet/>
+            </div>
         </div>
     );
 };

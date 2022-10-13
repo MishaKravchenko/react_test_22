@@ -14,6 +14,7 @@ const UserAlbumPhotosPage = () => {
 
     return (
         <div>
+            <h2>Photos</h2>
             {photos.map(value => <UserAlbumPhotos key={value.id} photos={value}/>)}
         </div>
     );

@@ -1,0 +1,6 @@
+.post_container{
+    display: flex;
+    justify-content: space-around;
+    border: black 1px solid;
+
+}

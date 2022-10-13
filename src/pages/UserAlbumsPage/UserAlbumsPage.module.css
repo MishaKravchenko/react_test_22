@@ -1,0 +1,6 @@
+.userAlbums_container{
+    display: flex;
+    flex-flow: column;
+    width: 700px;
+    border: black 1px solid;
+}

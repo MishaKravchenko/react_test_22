@@ -1,0 +1,37 @@
+.header{
+    min-height: 90px;
+    background-color: darkorange;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+}
+
+.header a{
+    color: black;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header a[class='active']{
+    color: #ffffff;
+    border: 1px solid #590000;
+}
+
+.footer{
+    min-height: 20px;
+    background-color: black;
+    color: snow;
+    display: flex;
+    justify-content: right;
+    padding-right: 20px;
+}
+
+.outlet{
+    width: 95%;
+    margin: 0 auto;
+    height: calc(100vh - 110px);
+    overflow: hidden;
+    overflow-y: auto;
+}

@@ -6,11 +6,11 @@ import UserAlbumPhotos from "../../components/UserAlbumPhotos/UserAlbumPhotos";
 const UserAlbumPhotosPage = () => {
 
     const [photos, setPhotos] = useState([]);
-    const params = useParams();
+    const {albumId} = useParams();
 
     useEffect(()=>{
-        albumService.getPhotoByAlbumsId(params.id).then(value => setPhotos([...value]))
-    }, [params.id]);
+        albumService.getPhotoByAlbumsId(albumId).then(value => setPhotos([...value]))
+    }, [albumId]);
 
     return (
         <div>

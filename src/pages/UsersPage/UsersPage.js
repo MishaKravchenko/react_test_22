@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
+import {Outlet} from "react-router-dom";
+
 import {userService} from "../../services/user.service";
 import Users from "../../components/Users/Users";
-import {Outlet} from "react-router-dom";
 import css from "./UserPage.module.css";
 
 
@@ -26,4 +27,4 @@ const UsersPage = () => {
     );
 };
 
-export default UsersPage;
+export {UsersPage};

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {albumService} from "../../services/album.service";
 import {useParams} from "react-router-dom";
+
+import {albumService} from "../../services/album.service";
 import UserAlbumPhotos from "../../components/UserAlbumPhotos/UserAlbumPhotos";
 
 const UserAlbumPhotosPage = () => {
@@ -20,4 +21,4 @@ const UserAlbumPhotosPage = () => {
     );
 };
 
-export default UserAlbumPhotosPage;
+export {UserAlbumPhotosPage};

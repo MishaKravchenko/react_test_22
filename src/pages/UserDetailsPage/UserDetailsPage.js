@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {userService} from "../../services/user.service";
 import {useLocation, useParams, Outlet, Link} from "react-router-dom";
+
+import {userService} from "../../services/user.service";
 import UserDetails from "../../components/UserDetails/UserDetails";
 import css from "./UserDetailsPage.module.css";
 
@@ -10,7 +11,6 @@ const UserDetailsPage = () => {
         const {state} = useLocation();
         const {id} = useParams();
 
-
         useEffect(() => {
             if (!state) {
                 userService.getById(id).then(value => setUser(value))
@@ -18,6 +18,7 @@ const UserDetailsPage = () => {
                 setUser(state)
             }
         }, [id, state])
+
         return (
             <div className={css.userDetails_container}>
                 <div><h2>UserDetails</h2>{user && <UserDetails user={user}/>}</div>
@@ -30,4 +31,4 @@ const UserDetailsPage = () => {
     }
 ;
 
-export default UserDetailsPage;
+export {UserDetailsPage};

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {userService} from "../../services/user.service";
 import {useLocation} from "react-router-dom";
+
+import {userService} from "../../services/user.service";
 import UserPosts from "../../components/UserPosts/UserPosts";
 
 const UserPostsPage = () => {
@@ -20,4 +21,4 @@ const UserPostsPage = () => {
     );
 };
 
-export default UserPostsPage;
+export {UserPostsPage};

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {postService} from "../../services/post.service";
 import {useParams} from "react-router-dom";
+
+import {postService} from "../../services/post.service";
 import PostComments from "../../components/PostComments/PostComments";
 
 const PostCommentsPage = () => {
@@ -8,7 +9,7 @@ const PostCommentsPage = () => {
     const [comments, setComments] = useState([]);
     const {id} = useParams();
 
-    useEffect(()=>{
+    useEffect(() => {
         postService.getCommentsById(id).then(value => setComments([...value]))
     }, [id]);
 
@@ -19,4 +20,4 @@ const PostCommentsPage = () => {
     );
 };
 
-export default PostCommentsPage;
+export {PostCommentsPage};

@@ -1,7 +1,9 @@
 import React from 'react';
 
 const UserAlbumPhotos = ({photos}) => {
+
     const {id, title, thumbnailUrl} = photos;
+
     return (
         <div>
             <div>Id: {id}</div>

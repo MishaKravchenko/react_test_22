@@ -1,15 +1,8 @@
-import './App.css';
 import {Routes, Route} from "react-router-dom";
-import HomePage from "./pages/HomePage/HomePage";
-import UsersPage from "./pages/UsersPage/UsersPage";
-import PostsPage from "./pages/PostsPage/PostsPage";
+
+import {HomePage, PostCommentsPage, PostDetailsPage, PostsPage, UserAlbumPhotosPage, UserAlbumsPage, UserDetailsPage, UserPostsPage, UsersPage} from "./pages";
 import Layout from "./components/Layout/Layout";
-import UserDetailsPage from "./pages/UserDetailsPage/UserDetailsPage";
-import UserPostsPage from "./pages/UserPostsPage/UserPostsPage";
-import UserAlbumsPage from "./pages/UserAlbumsPage/UserAlbumsPage";
-import UserAlbumPhotosPage from "./pages/UserAlbumPhotosPage/UserAlbumPhotosPage";
-import PostDetailsPage from "./pages/PostDetailsPage/PostDetailsPage";
-import PostCommentsPage from "./pages/PostCommentsPage/PostCommentsPage";
+import './App.css';
 
 
 function App() {

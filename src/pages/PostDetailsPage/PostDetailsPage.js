@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useLocation, useParams, Outlet} from "react-router-dom";
+
 import {postService} from "../../services/post.service";
 import PostDetails from "../../components/PostDetails/PostDetails";
 import css from "../PostDetailsPage/PostDetailsPage.module.css";
@@ -27,4 +28,4 @@ const PostDetailsPage = () => {
     );
 };
 
-export default PostDetailsPage;
+export {PostDetailsPage};

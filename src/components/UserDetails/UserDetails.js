@@ -1,7 +1,9 @@
 import React from 'react';
 
 const UserDetails = ({user}) => {
+
     const {id, name, username, email} = user;
+
     return (
         <div>
             <div>Id: {id}</div>

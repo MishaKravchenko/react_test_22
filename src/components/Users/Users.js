@@ -2,7 +2,9 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const Users = ({user}) => {
+
     const {id, name} = user;
+
     return (
         <div>
             <h3>{id}) {name}</h3>

@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {useParams, Outlet} from "react-router-dom";
+
 import UserAlbums from "../../components/UserAlbums/UserAlbums";
-import css from "./UserAlbumsPage.module.css";
 import {albumService} from "../../services/album.service";
+import css from "./UserAlbumsPage.module.css";
 
 
 const UserAlbumsPage = () => {
@@ -28,4 +29,4 @@ const UserAlbumsPage = () => {
     );
 };
 
-export default UserAlbumsPage;
+export {UserAlbumsPage};

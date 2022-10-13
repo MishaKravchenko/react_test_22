@@ -2,13 +2,15 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 const UserAlbums = ({albums}) => {
+
     const {id, title} = albums
+
     return (
         <div>
             <div>Id: {id}</div>
             <div>Title: {title}</div>
             <Link to={id.toString() + "/photos"} state={albums}>
-            <button>Photos</button>
+                <button>Photos</button>
             </Link>
         </div>
     );

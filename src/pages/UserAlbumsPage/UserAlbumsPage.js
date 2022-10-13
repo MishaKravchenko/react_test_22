@@ -8,7 +8,6 @@ import {albumService} from "../../services/album.service";
 const UserAlbumsPage = () => {
 
     const [albums, setAlbums] = useState([]);
-    // const {state} = useLocation();
     const {id} = useParams();
 
     useEffect(() => {

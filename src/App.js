@@ -13,7 +13,7 @@ function App() {
 
     return (
         <div>
-            <Form uptade={setTrigger}/>
+            <Form update={setTrigger}/>
             <Cars trigger={trigger}/>
         </div>
     );

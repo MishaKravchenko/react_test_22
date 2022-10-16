@@ -1,0 +1,9 @@
+.episodes {
+    border: teal double thin;
+    width: 50%;
+}
+
+.episodes > a {
+    text-decoration: none;
+    color: darkviolet;
+}

@@ -1,17 +1,20 @@
-import React from 'react';
-import {useLocation} from "react-router-dom";
+import React, {useEffect, useState} from 'react';
 
+import {CharacterService} from "../../services/character.service";
+import baseURL, {urls} from "../../configs/urls";
 import Characters from "../../components/Characters/Characters";
-
-import './CharactersPage.css'
 
 const CharactersPage = () => {
 
-    const {state} = useLocation();
+    const [characters, setCharacters] = useState([]);
+
+    useEffect(()=>{
+        CharacterService.getAll(baseURL + urls.characters).then(value => setCharacters(value.results))
+    },[]);
 
     return (
-        <div className={'charactersPage'}>
-            {state.map(characters => <Characters key={characters.split('/').pop()} characters={characters}/>)}
+        <div>
+            {characters.map(character => <Characters key={character.id} character={character}/>)}
         </div>
     );
 };

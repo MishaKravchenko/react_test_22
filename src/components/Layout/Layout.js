@@ -17,7 +17,7 @@ const Layout = () => {
                     Location
                 </NavLink>
             </header>
-            <div className='layout'>
+            <div className='outlet'>
                 <Outlet/>
             </div>
         </div>

@@ -1,6 +1,6 @@
 header {
     background-color: slateblue;
-    height: 100px;
+    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,8 +8,9 @@ header {
     margin-bottom: 20px;
 }
 
-header > a {
+header  a {
     background-color: slateblue;
+    font-weight: bold;
     text-decoration: none;
     color: snow;
     font-size: 40px;
@@ -17,10 +18,11 @@ header > a {
     padding: 10px;
 }
 
-/*header:[class]*/
+header a[class='active']{
+    color: #38007a;
+    background-color: #82b2ff;
+}
 
-.layout {
+.outlet {
     background: linear-gradient(0.45turn, thistle, lightcyan);
-    height: 97vh;
-    overflow-y: auto;
 }

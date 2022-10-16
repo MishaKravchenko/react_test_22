@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Character = ({character:{id, name, status, species, image}}) => {
+const EpisodeCharacter = ({character:{id, name, status, species, image}}) => {
     return (
         <div>
             <div className='character'>
@@ -13,4 +13,4 @@ const Character = ({character:{id, name, status, species, image}}) => {
     );
 };
 
-export default Character;
+export default EpisodeCharacter;

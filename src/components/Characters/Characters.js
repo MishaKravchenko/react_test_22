@@ -1,21 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 
-import {EpisodeService} from "../../services/episode.service";
-import Character from "../Character/Character";
-
-import './Characters.css'
-
-const Characters = ({characters}) => {
-
-    const [character, setCharacter] = useState([]);
-
-    useEffect(() => {
-        EpisodeService.getById(characters).then(value => setCharacter(value))
-    }, [characters]);
+const Characters = ({character: {id, name, status, species, image}}) => {
 
     return (
-        <div>
-            <Character key={character.id} character={character}/>
+        <div className='character'>
+            <b>{id}) {name}</b>
+            <br/><small>{status}</small>
+            <br/><u>Species</u>: <i>{species}</i>
+            <br/><img src={image} alt={name}/>
         </div>
     );
 };

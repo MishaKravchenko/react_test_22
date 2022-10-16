@@ -22,7 +22,14 @@ const Form = ({update, carForUpdate: {id, model, price, year}}) => {
 
     const submit = async (car) => {
         try {
-            const newCar = await carService.create(car);
+            let newCar;
+
+            if (id) {
+                newCar = await carService.updateById(id, car);
+            } else {
+                newCar = await carService.create(car);
+            }
+
             update(newCar);
         } catch (error) {
             setFormError(error.response.data)
@@ -41,7 +48,7 @@ const Form = ({update, carForUpdate: {id, model, price, year}}) => {
                 <label>Year: <input type="text" defaultValue={''} {...register('year')} /></label>
                 {/*{formError.year && <span>{formError.year[0]}</span>}*/}
                 {errors.year && <span>{errors.year.message}</span>}
-                <button>{id? 'Update' :'Create'}</button>
+                <button>{id ? 'Update' : 'Create'}</button>
             </form>
         </div>
     );

@@ -1,9 +1,13 @@
 .episodes {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     border: teal double thin;
-    width: 50%;
+    width: 250px;
 }
 
 .episodes > a {
     text-decoration: none;
     color: darkviolet;
+    border: #4f0481 3px double;
 }

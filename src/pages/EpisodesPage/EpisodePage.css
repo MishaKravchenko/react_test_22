@@ -1,0 +1,17 @@
+.episodesPage {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 5px 10px;
+}
+
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buttons > button {
+    background-color: lightcyan;
+    border-radius: 3px;
+    border: blueviolet double thick;
+}

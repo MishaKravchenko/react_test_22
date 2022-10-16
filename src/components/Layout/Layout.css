@@ -1,0 +1,26 @@
+header {
+    background-color: slateblue;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:100px;
+    margin-bottom: 20px;
+}
+
+header > a {
+    background-color: slateblue;
+    text-decoration: none;
+    color: snow;
+    font-size: 40px;
+    border: black 1px solid;
+    padding: 10px;
+}
+
+/*header:[class]*/
+
+.layout {
+    background: linear-gradient(0.45turn, thistle, lightcyan);
+    height: 97vh;
+    overflow-y: auto;
+}

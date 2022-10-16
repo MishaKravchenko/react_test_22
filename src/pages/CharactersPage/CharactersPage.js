@@ -3,6 +3,8 @@ import {useLocation} from "react-router-dom";
 
 import Characters from "../../components/Characters/Characters";
 
+import './CharactersPage.css'
+
 const CharactersPage = () => {
 
     const {state} = useLocation();

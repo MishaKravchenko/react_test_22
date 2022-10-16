@@ -3,6 +3,8 @@ import React, {useEffect, useState} from 'react';
 import {EpisodeService} from "../../services/episode.service";
 import Character from "../Character/Character";
 
+import './Characters.css'
+
 const Characters = ({characters}) => {
 
     const [character, setCharacter] = useState([]);

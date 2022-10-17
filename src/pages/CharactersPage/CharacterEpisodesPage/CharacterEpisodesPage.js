@@ -13,4 +13,4 @@ const CharacterEpisodesPage = () => {
     );
 };
 
-export default CharacterEpisodesPage;
+export {CharacterEpisodesPage};

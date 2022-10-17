@@ -13,7 +13,7 @@ const Layout = () => {
                 <NavLink to={'/characters'}>
                     Characters
                 </NavLink>
-                <NavLink to={'/location'}>
+                <NavLink to={'/locations'}>
                     Location
                 </NavLink>
             </header>

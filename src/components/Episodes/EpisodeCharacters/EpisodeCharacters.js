@@ -1,21 +1,20 @@
 import React, {useEffect, useState} from 'react';
 
-import {EpisodeService} from "../../services/episode.service";
+import {EpisodeService} from "../../../services/episode.service";
 import EpisodeCharacter from "../EpisodeCharacter/EpisodeCharacter";
-
 import './EpisodeCharacters.css'
 
-const EpisodeCharacters = ({characters}) => {
+const EpisodeCharacters = ({url}) => {
 
     const [character, setCharacter] = useState([]);
 
     useEffect(() => {
-        EpisodeService.getById(characters).then(value => setCharacter(value))
-    }, [characters]);
+        EpisodeService.getById(url).then(value => setCharacter(value))
+    }, [url]);
 
     return (
         <div>
-            <EpisodeCharacter key={character.id} character={character}/>
+            <EpisodeCharacter character={character}/>
         </div>
     );
 };

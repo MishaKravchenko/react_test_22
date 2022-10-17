@@ -9,41 +9,40 @@ const EpisodesPage = () => {
 
     const [episodes, setEpisodes] = useState([]);
     const [episodesPageInfo, setEpisodesPageInfo] = useState({});
+    let [url, setUrl] = useState(baseURL + urls.episodes);
     let [page, setPage] = useState(1);
-    let [num, setNum] = useState(baseURL + urls.episodes);
 
     useEffect(() => {
-        EpisodeService.getAll(num).then(value => {
+        EpisodeService.getAll(url).then(value => {
             setEpisodes(value.results)
             setEpisodesPageInfo(value.info);
 
-            if (num.indexOf("=") >= 0)
-                setPage(num.split("=").pop());
+            if (url.indexOf("=") >= 0)
+                setPage(url.split("=").pop());
             else
                 setPage(1);
 
         });
-    }, [num, page]);
+    }, [url, page]);
 
     const nextPage = () => {
         if (episodesPageInfo.next)
-            setNum(episodesPageInfo.next);
+            setUrl(episodesPageInfo.next);
         else if (episodesPageInfo.next === null)
-            setNum(baseURL + urls.episodes);
+            setUrl(baseURL + urls.episodes);
     };
 
     const prevPage = () => {
         if (episodesPageInfo.prev)
-            setNum(episodesPageInfo.prev);
+            setUrl(episodesPageInfo.prev);
         else if (episodesPageInfo.prev === null)
-            setNum(`${baseURL}${urls.episodes}?page=${episodesPageInfo.pages}`)
+            setUrl(`${baseURL}${urls.episodes}?page=${episodesPageInfo.pages}`)
     };
 
     return (
         <div>
             <div className='episodesPage'>
-                {episodes.map(episode =>
-                    <Episodes key={episode.id} episode={episode}/>)}
+                {episodes.map(episode => <Episodes key={episode.id} episode={episode}/>)}
             </div>
             <div className='buttons'>
                 <button onClick={prevPage}>prev</button>

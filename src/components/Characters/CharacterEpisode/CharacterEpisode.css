@@ -1,0 +1,6 @@
+.character_episode {
+    display: grid;
+    width: 1000px;
+    grid-template-columns: 2fr 1fr 1fr;
+    border: teal double thin;
+}

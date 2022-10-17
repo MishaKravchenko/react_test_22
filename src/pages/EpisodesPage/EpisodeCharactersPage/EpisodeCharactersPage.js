@@ -1,8 +1,7 @@
 import React from 'react';
 import {useLocation} from "react-router-dom";
 
-import EpisodeCharacters from "../../components/EpisodeCharacters/EpisodeCharacters";
-
+import EpisodeCharacters from "../../../components/Episodes/EpisodeCharacters/EpisodeCharacters";
 import './EpisodeCharactersPage.css'
 
 const EpisodeCharactersPage = () => {
@@ -11,7 +10,7 @@ const EpisodeCharactersPage = () => {
 
     return (
         <div className={'charactersPage'}>
-            {state.map(characters => <EpisodeCharacters key={characters.split('/').pop()} characters={characters}/>)}
+            {state.map(url => <EpisodeCharacters key={url.split('/').pop()} url={url}/>)}
         </div>
     );
 };

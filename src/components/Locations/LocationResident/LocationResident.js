@@ -1,8 +1,8 @@
 import React from 'react';
 
-const EpisodeCharacter = ({character: {id, name, status, species, image}}) => {
+const LocationResident = ({resident: {id, name, status, species, image}}) => {
     return (
-        <div className='character'>
+        <div className='residents'>
             <b>{id}) {name}</b>
             <br/><small>{status}</small>
             <br/><u>Species</u>: <i>{species}</i>
@@ -11,4 +11,4 @@ const EpisodeCharacter = ({character: {id, name, status, species, image}}) => {
     );
 };
 
-export default EpisodeCharacter;
+export default LocationResident;

@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {useLocation} from "react-router-dom";
+
+import LocationResidents from "../../../components/Locations/LocationResidents/LocationResidents";
 
 const LocationResidentsPage = () => {
 
-    useState()
+    const {state} = useLocation();
 
     return (
-        <div>
-
+        <div className={'locationResidentsPage'}>
+            {state.map(url => <LocationResidents key={url.split('/').pop()} url={url}/>)}
         </div>
     );
 };

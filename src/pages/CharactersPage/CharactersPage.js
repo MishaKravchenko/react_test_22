@@ -11,10 +11,10 @@ const CharactersPage = () => {
         const [charactersPageInfo, setCharactersPageInfo] = useState([]);
         const [url, setUrl] = useState(baseURL + urls.characters);
         const [page, setPage] = useState(1);
-
+        const [query, setQuery] = useState('');
 
         useEffect(() => {
-            CharacterService.getAll(url).then(value => {
+            CharacterService.getAll(`${url}?name=${query}`).then(value => {
                 setCharacters(value.results)
                 setCharactersPageInfo(value.info)
 
@@ -24,7 +24,7 @@ const CharactersPage = () => {
                     setPage(1)
 
             });
-        }, [url, page]);
+        }, [url, page, query]);
 
         const nextPage = () => {
             if (charactersPageInfo.next)
@@ -41,6 +41,14 @@ const CharactersPage = () => {
 
         return (
             <div>
+                <div className={"search"}>
+                    <input type="text"
+                           placeholder={"Search Character"}
+                           className={"input"}
+                           onChange={event => setQuery(event.target.value)}
+                           value={query}
+                    />
+                </div>
                 <div className='charactersPage'>
                     {characters.map(character => <Characters key={character.id} character={character}/>)}
                 </div>

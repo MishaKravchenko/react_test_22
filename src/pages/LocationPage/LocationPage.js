@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Outlet} from "react-router-dom";
 
 import {LocationService} from "../../services/location.service";
 import baseURL, {urls} from "../../configs/urls";
 import Locations from "../../components/Locations/Locations";
+import {Outlet} from "react-router-dom";
 
 const LocationPage = () => {
 
@@ -42,15 +42,17 @@ const LocationPage = () => {
 
     return (
         <div>
-            <div>
+            <div className='locationsPage'>
                 {locations.map(location => <Locations key={location.id} location={location}/>)}
             </div>
-            <div>
+            <div className='buttons'>
                 <button onClick={prevPage}>Prev</button>
                 <span> - - {page} - - </span>
                 <button onClick={nextPage}>Prev</button>
             </div>
-            <div><Outlet/></div>
+            <div>
+                <Outlet/>
+            </div>
         </div>
     );
 };

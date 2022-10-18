@@ -22,8 +22,9 @@ function App() {
                 <Route path={'characters'} element={<CharactersPage/>}/>
                 <Route path={'characters/:id/episodes'} element={<CharacterEpisodesPage/>}/>
                 <Route path={'locations'} element={<LocationPage/>}>
-                    <Route path={'locations/residents'} element={<LocationResidentsPage/>}/>
+                    <Route path={':id/residents'} element={<LocationResidentsPage/>}/>
                 </Route>
+
                 <Route path={'*'} element={<NotFoundPage/>}/>
             </Route>
         </Routes>

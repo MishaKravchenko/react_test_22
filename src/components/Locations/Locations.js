@@ -5,7 +5,7 @@ const Locations = ({location: {id, name, type, dimension, residents}}) => {
     return (
         <div>
             {id}) {name}, {type}, {dimension}.
-            <Link to='residents' residents={residents}>
+            <Link to={id + '/residents'} state={residents}>
                 <button>Residents</button>
             </Link>
         </div>

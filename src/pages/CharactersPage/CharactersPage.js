@@ -24,7 +24,7 @@ const CharactersPage = () => {
                     setPage(1)
 
             });
-        }, [url]);
+        }, [url, page]);
 
         const nextPage = () => {
             if (charactersPageInfo.next)

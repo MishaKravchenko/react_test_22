@@ -3,8 +3,10 @@ import {useDispatch} from "react-redux";
 import {carToUpdate, deleteCarThunk} from "../../redux/slices/car.slices";
 
 const Car = ({car}) => {
+
     const {id, model, price, year} = car;
     const dispatch = useDispatch();
+
     return (
         <div>
             <div>

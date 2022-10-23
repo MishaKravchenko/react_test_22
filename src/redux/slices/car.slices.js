@@ -69,7 +69,7 @@ const carSlice = createSlice({
         },
         updateCar: (state, action) => {
             const index = state.cars.findIndex(car => car.id === action.payload.id);
-            state.cars.splice(index,1, action.payload.car)
+            state.cars.splice({index},1, action.payload.car)
         }
     },
     extraReducers: {

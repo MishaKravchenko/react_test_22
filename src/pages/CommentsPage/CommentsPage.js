@@ -1,21 +1,29 @@
 import React, {useEffect} from 'react';
+import {Outlet} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+
 import {getAllComments} from "../../redux/slices/comments.slice/comment.slice";
-import Comments from "../../components/Comments/Comments";
+import {Comments} from "../../components";
 
 const CommentsPage = () => {
 
     const dispatch = useDispatch();
     const {comments} = useSelector(state => state['commentReducer']);
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getAllComments())
-    },[dispatch])
+    }, [dispatch])
+
     return (
         <div>
-            {comments.map(comment => <Comments key={comment.id} comment={comment}/>)}
+            <div>
+                {comments.map(comment => <Comments key={comment.id} comment={comment}/>)}
+            </div>
+            <div>
+                <Outlet/>
+            </div>
         </div>
     );
 };
 
-export default CommentsPage;
+export {CommentsPage};

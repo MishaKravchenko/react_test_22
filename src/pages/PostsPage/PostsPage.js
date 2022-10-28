@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react';
+import {Outlet} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 
-import Posts from "../../components/Posts/Posts";
 import {getAllPosts} from "../../redux/slices/post.slice/post.slice";
+import {Posts} from "../../components";
 
 const PostsPage = () => {
 
@@ -15,9 +16,14 @@ const PostsPage = () => {
 
     return (
         <div>
-            {posts.map(post => <Posts key={post.id} post={post}/>)}
+            <div>
+                {posts.map(post => <Posts key={post.id} post={post}/>)}
+            </div>
+            <div>
+                <Outlet/>
+            </div>
         </div>
     );
 };
 
-export default PostsPage;
+export {PostsPage};

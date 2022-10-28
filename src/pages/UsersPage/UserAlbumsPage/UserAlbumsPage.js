@@ -1,17 +1,16 @@
 import React from 'react';
 import {Outlet} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {UserAlbums} from "../../../components";
 
-import {UserDetails} from "../../../components";
 
-
-const UserDetailsPage = () => {
-    const {user} = useSelector(state => state['userReducer']);
+const UserAlbumsPage = () => {
+    const {albums} = useSelector(state => state['userReducer']);
 
     return (
         <div>
             <div>
-                {user && <UserDetails user={user}/>}
+                {albums && albums.map(album => <UserAlbums key={album.id} album={album}/>)}
             </div>
             <div>
                 <Outlet/>
@@ -20,4 +19,4 @@ const UserDetailsPage = () => {
     );
 };
 
-export {UserDetailsPage};
+export {UserAlbumsPage};

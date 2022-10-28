@@ -1,11 +1,19 @@
 import {Route, Routes} from "react-router-dom";
 
+import {Layout} from "./components";
 import './App.css';
-import Layout from "./components/Layout/Layout";
-import UsersPage from "./pages/UsersPage/UsersPage";
-import PostsPage from "./pages/PostsPage/PostsPage";
-import CommentsPage from "./pages/CommentsPage/CommentsPage";
-import UserDetailsPage from "./pages/UsersPage/UserDetailsPage/UserDetailsPage";
+import {
+    CommentDetailsPage,
+    CommentsPage,
+    PostCommentsPage,
+    PostDetailsPage,
+    PostsPage,
+    UserAlbumPhotosPage,
+    UserAlbumsPage,
+    UserDetailsPage,
+    UserPostsPage,
+    UsersPage
+} from "./pages";
 
 function App() {
 
@@ -13,10 +21,21 @@ function App() {
         <Routes>
             <Route path={"/"} element={<Layout/>}>
                 <Route path={"users"} element={<UsersPage/>}>
-                    <Route path={":id"} element={<UserDetailsPage/>}/>
+                    <Route path={":id"} element={<UserDetailsPage/>}>
+                        <Route path={"posts"} element={<UserPostsPage/>}/>
+                    </Route>
+                    <Route path={":id/albums"} element={<UserAlbumsPage/>}>
+                        <Route path={":albumId/photos"} element={<UserAlbumPhotosPage/>}/>
+                    </Route>
                 </Route>
-                <Route path={"posts"} element={<PostsPage/>}/>
-                <Route path={"comments"} element={<CommentsPage/>}/>
+                <Route path={"posts"} element={<PostsPage/>}>
+                    <Route path={":id"} element={<PostDetailsPage/>}>
+                        <Route path={"comments"} element={<PostCommentsPage/>}/>
+                    </Route>
+                </Route>
+                <Route path={"comments"} element={<CommentsPage/>}>
+                    <Route path={":id"} element={<CommentDetailsPage/>}/>
+                </Route>
             </Route>
         </Routes>
     );

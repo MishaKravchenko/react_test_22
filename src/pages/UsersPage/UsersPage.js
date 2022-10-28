@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
 import {Outlet} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
 
 import {getAllUsers} from "../../redux/slices/user.slice/user.slice";
-import Users from "../../components/Users/Users";
+import {Users} from "../../components";
 
 const UsersPage = () => {
 
@@ -14,15 +14,19 @@ const UsersPage = () => {
         dispatch(getAllUsers())
     }, [dispatch])
 
-
     return (
         <div>
-            {status === 'pending' && <h1>Loading...</h1>}
-            {error && <h2>{error}</h2>}
-            {users.map(user => <Users key={user.id} user={user}/>)}
-            <Outlet/>
+            <div>
+                {status === 'pending' && <h1>Loading...</h1>}
+                {error && <h2>{error}</h2>}
+                {users.map(user => <Users key={user.id} user={user}/>)}
+            </div>
+            <div>
+                <Outlet/>
+            </div>
+
         </div>
     );
 };
 
-export default UsersPage;
+export {UsersPage};

@@ -12,9 +12,11 @@ const Layout = () => {
                 <NavLink to={"posts"}>Posts</NavLink>
                 <NavLink to={"comments"}>Comments</NavLink>
             </div>
-            <Outlet/>
+            <div>
+                <Outlet/>
+            </div>
         </div>
     );
 };
 
-export default Layout;
+export {Layout};

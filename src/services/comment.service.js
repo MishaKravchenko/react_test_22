@@ -1,7 +1,7 @@
-import {axiosService} from "./axios.service";
-import {urls} from "../constants/urls";
+import {axiosServiceURL} from "./axios.service";
+import {urls} from "../constants/urls.jsonplaceholder";
 
 export const commentService = {
-    getAll: () => axiosService.get(urls.comments).then(value => value.data),
-    getById: (id) => axiosService.get(`${urls.comments}/${id}`).then(value => value.data)
+    getAll: () => axiosServiceURL.get(urls.comments).then(value => value.data),
+    getById: (id) => axiosServiceURL.get(`${urls.comments}/${id}`).then(value => value.data)
 }

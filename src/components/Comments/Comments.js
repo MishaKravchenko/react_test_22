@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
 
-import {getCommentById} from "../../redux/slices/comments.slice/comment.slice";
+import {getCommentById} from "../../redux/slices/comment.slice/comment.slice";
 
 const Comments = ({comment}) => {
 

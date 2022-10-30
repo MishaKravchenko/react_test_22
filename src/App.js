@@ -15,6 +15,7 @@ import {
     UsersPage
 } from "./pages";
 import CarsPage from "./pages/CarsPage/CarsPage";
+import TodosPage from "./pages/TodosPage/TodosPage";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
                     <Route path={":id"} element={<CommentDetailsPage/>}/>
                 </Route>
                 <Route path={"cars"} element={<CarsPage/>}/>
+                <Route path={"todos"} element={<TodosPage/>}/>
             </Route>
         </Routes>
     );

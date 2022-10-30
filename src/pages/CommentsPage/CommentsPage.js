@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {Outlet} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 
-import {getAllComments} from "../../redux/slices/comments.slice/comment.slice";
+import {getAllComments} from "../../redux/slices/comment.slice/comment.slice";
 import {Comments} from "../../components";
 
 const CommentsPage = () => {

@@ -12,6 +12,7 @@ const Layout = () => {
                 <NavLink to={"posts"}>Posts</NavLink>
                 <NavLink to={"comments"}>Comments</NavLink>
                 <NavLink to={"cars"}>Cars</NavLink>
+                <NavLink to={"todos"}>Todos</NavLink>
             </div>
             <div>
                 <Outlet/>

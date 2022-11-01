@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {LocationService} from "../../services/location.service";
+import {locationService} from "../../services/location.service";
 import baseURL, {urls} from "../../configs/urls";
 import Locations from "../../components/Locations/Locations";
 import {Outlet} from "react-router-dom";
@@ -14,7 +14,7 @@ const LocationPage = () => {
 
 
     useEffect(() => {
-        LocationService.getAll(url).then(value => {
+        locationService.getAll(url).then(value => {
             setLocations(value.results)
             setLocationsPageInfo(value.info)
 

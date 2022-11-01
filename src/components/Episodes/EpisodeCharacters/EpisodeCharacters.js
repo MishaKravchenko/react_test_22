@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {EpisodeService} from "../../../services/episode.service";
+import {episodeService} from "../../../services/episode.service";
 import EpisodeCharacter from "../EpisodeCharacter/EpisodeCharacter";
 import './EpisodeCharacters.css'
 
@@ -9,7 +9,7 @@ const EpisodeCharacters = ({url}) => {
     const [character, setCharacter] = useState([]);
 
     useEffect(() => {
-        EpisodeService.getById(url).then(value => setCharacter(value))
+        episodeService.getById(url).then(value => setCharacter(value))
     }, [url]);
 
     return (

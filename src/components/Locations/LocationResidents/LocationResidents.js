@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {LocationService} from "../../../services/location.service";
+import {locationService} from "../../../services/location.service";
 import LocationResident from "../LocationResident/LocationResident";
 
 const LocationResidents = ({url}) => {
@@ -7,7 +7,7 @@ const LocationResidents = ({url}) => {
     const [resident, setResident] = useState([]);
 
     useEffect(()=> {
-        LocationService.getById(url).then(value => setResident(value))
+        locationService.getById(url).then(value => setResident(value))
     }, [url]);
 
     return (

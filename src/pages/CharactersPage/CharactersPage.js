@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {CharacterService} from "../../services/character.service";
+import {characterService} from "../../services/character.service";
 import baseURL, {urls} from "../../configs/urls";
 import Characters from "../../components/Characters/Characters";
 import './CharactersPage.css'
@@ -8,7 +8,7 @@ import Form from "../../components/Form/Form";
 
 const CharactersPage = () => {
 // 1) Пошук по квері параметрам, дані беремо з інпута, передаємо в квері і робимо запрос. (Виникла проблема з заданням умови на getAll(url). Що я хотів зробити. Створюємо searchUrl (useState) - - і якщо !query відсутнє то робимо запит просто на url - якшо ж query є то сетаєм `${url}?name=${query}, виникає конфлікт з сепаратором і стається перша сторінка в сетПейдж`).
-    // 2) Створив контрольовану компоненту Form з трьома інпутами. Яка фільтрує мій масив персонажів. Але вона бере тільки персонажів на одній сторінці. Тому єдиним рішенням це буде пошук персонажів через queryParams.
+// 2) Створив контрольовану компоненту Form з трьома інпутами. Яка фільтрує мій масив персонажів. Але вона бере тільки персонажів на одній сторінці. Тому єдиним рішенням це буде пошук персонажів через queryParams.
 
         const [characters, setCharacters] = useState([]);
         const [charactersPageInfo, setCharactersPageInfo] = useState([]);
@@ -19,7 +19,7 @@ const CharactersPage = () => {
 
         useEffect(() => {
 
-            CharacterService.getAll(url
+            characterService.getAll(url
                 // 1) `${url}?name=${query}`
             ).then(value => {
                 setCharacters(value.results)

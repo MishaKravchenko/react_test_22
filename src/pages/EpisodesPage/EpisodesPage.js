@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import {EpisodeService} from "../../services/episode.service";
+import {episodeService} from "../../services/episode.service";
 import Episodes from "../../components/Episodes/Episodes";
 import baseURL, {urls} from "../../configs/urls";
 import "./EpisodePage.css"
@@ -13,7 +13,7 @@ const EpisodesPage = () => {
     let [page, setPage] = useState(1);
 
     useEffect(() => {
-        EpisodeService.getAll(url).then(value => {
+        episodeService.getAll(url).then(value => {
             setEpisodes(value.results)
             setEpisodesPageInfo(value.info);
 
